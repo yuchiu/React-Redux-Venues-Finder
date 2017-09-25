@@ -1,6 +1,6 @@
-import todoReducer from './todoReducer'
+import venuesReducer from './venuesReducer'
 
 
 export {
-    todoReducer
+    venuesReducer
 }
