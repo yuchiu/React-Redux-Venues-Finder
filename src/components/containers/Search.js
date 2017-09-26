@@ -12,24 +12,22 @@ class Search extends React.Component {
         filter: ''
       }
     }
-
   }
 
+  //fetch user location once the page is mounted
   componentWillMount() {
     this
       .props
       .fetchAutoLocate();
   }
 
-
   handleChange(locOrFil, e) {
     let newSearch = this.state.newSearch
     newSearch[locOrFil] = e.target.value
     this.setState({newSearch: newSearch})
-
   }
-  handleSearch(e) {
 
+  handleSearch(e) {
     e.preventDefault()
     this.props.fetchSearch(this.state.newSearch)
     this.setState({
@@ -38,7 +36,6 @@ class Search extends React.Component {
         filter: ''
       }
     })
-
   }
 
   render() {
@@ -105,7 +102,6 @@ class Search extends React.Component {
       </div>
     )
   }
-
 }
 
 const stateToProps = (state)=>{
@@ -114,7 +110,6 @@ const stateToProps = (state)=>{
 }
 
 const dispatchToProps = (dispatch)=>{
-
   return {
     fetchAutoLocate : ()=>{
       dispatch(actions.fetchAutoLocate())
@@ -124,8 +119,5 @@ const dispatchToProps = (dispatch)=>{
     }
   }
 }
-
-
-
 
 export default connect(stateToProps, dispatchToProps)(Search);

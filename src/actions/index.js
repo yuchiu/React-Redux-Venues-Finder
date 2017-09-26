@@ -11,6 +11,7 @@ const IPURL = "https://ipinfo.io"
 let actions = {
     fetchAutoLocate: () => {
         return (dispatch) => {
+            //fetch user's location once the page is mounted
             axios.get(IPURL).then((response) => {
                 dispatch(actions.fetchSearch({
                     location: response.data.city,
@@ -19,7 +20,6 @@ let actions = {
             })
         }
     },
-
 
     fetchSearch: (searchItem) => {
         return (dispatch) => {

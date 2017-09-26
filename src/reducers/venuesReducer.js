@@ -10,8 +10,10 @@ export default (state = initialState, action) => {
 
     switch (action.type) {
         case constants.SEARCH_VENUES:
-            const venuesList = action.payload.data.response.venues.slice(0, 10)
+            const venuesList = action.payload.data.response.venues.slice(0, 8)
             newState['venueList'] = venuesList
+
+            /* calculate average lat and lng */
             const averageLat = venuesList.map(function (venue, i, arr) {
                     return venue.location.lat / arr.length
                 })
@@ -24,7 +26,6 @@ export default (state = initialState, action) => {
                 .reduce(function (a, b) {
                     return a + b
                 })
-
             newState['center'] = {
                 lat: averageLat,
                 lng: averageLng

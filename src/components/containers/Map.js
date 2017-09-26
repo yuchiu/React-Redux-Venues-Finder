@@ -11,7 +11,6 @@ class Map extends React.Component {
       map: null
     }
   }
-
   mapLoaded(map) {
     if (this.state.map != null) 
       return
