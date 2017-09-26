@@ -1,4 +1,5 @@
 import React from 'react'
+import {connect} from 'react-redux'
 import {withGoogleMap, GoogleMap, Marker} from 'react-google-maps'
 const {LatLng, LatLngBounds} = google.maps;
 
@@ -16,12 +17,21 @@ class Map extends React.Component {
       return
     this.setState({map: map})
   }
-  render() {
 
-    const center ={
-        lat: 40.728199,
-        lng: -73.9894738
-      }
+  render() {
+    const markers = this
+      .props
+      .venues
+      .map((venue, i) => {
+        const marker = {
+          position: {
+            lat: venue.location.lat,
+            lng: venue.location.lng
+          }
+        }
+        return <Marker key={i} {...marker}/>
+
+      })
 
     return (
 
@@ -29,14 +39,20 @@ class Map extends React.Component {
         ref={this
         .mapLoaded
         .bind(this)}
-        defaultZoom={14}
-        defaultCenter={center}
-        center={center}>
-
+        defaultZoom={15}
+        defaultCenter={this.props.center}
+        center={this.props.center}>
+        {markers}
       </GoogleMap>
     )
   }
-
 }
 
-export default withGoogleMap(Map);
+const stateToProps = (state) => {
+  return {venues: state.venues.venueList, center: state.venues.center}
+}
+const dispatchToProps = (dispatch) => {
+  return {}
+}
+
+export default connect(stateToProps, dispatchToProps)(withGoogleMap(Map));

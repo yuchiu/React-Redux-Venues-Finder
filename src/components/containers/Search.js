@@ -7,11 +7,6 @@ class Search extends React.Component {
   constructor() {
     super()
     this.state = {
-      center: {
-        lat: 40.728199,
-        lng: -73.9894738
-      },
-
       newSearch: {
         location: '',
         filter: ''
@@ -19,16 +14,24 @@ class Search extends React.Component {
     }
 
   }
+
+  componentWillMount() {
+    this
+      .props
+      .fetchAutoLocate();
+  }
+
+
   handleChange(locOrFil, e) {
     let newSearch = this.state.newSearch
     newSearch[locOrFil] = e.target.value
     this.setState({newSearch: newSearch})
+
   }
   handleSearch(e) {
 
     e.preventDefault()
-
-      this.props.fetchSearch(this.state.newSearch)
+    this.props.fetchSearch(this.state.newSearch)
     this.setState({
       newSearch: {
         location: '',
@@ -113,8 +116,11 @@ const stateToProps = (state)=>{
 const dispatchToProps = (dispatch)=>{
 
   return {
+    fetchAutoLocate : ()=>{
+      dispatch(actions.fetchAutoLocate())
+    },
     fetchSearch : (newSearch)=>{
-      dispatch(actions.fetchSearch(newSearch)) 
+      dispatch(actions.fetchSearch(newSearch))
     }
   }
 }

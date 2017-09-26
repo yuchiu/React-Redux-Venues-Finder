@@ -3,21 +3,17 @@ import {connect} from 'react-redux'
 
 class Venues extends React.Component {
 
-  handleClick(){
-    console.log(this.props.venues.venueList)
-  }
   render() {
 
     return (
 
       <div>
-        <button onClick= {this.handleClick.bind(this)}>log venues</button>
         <div className="row">
           <div className="col-md-10 ">
             <ol style ={{
               listStyle: 'none'
             }}>
-              {this.props.venues.venueList.map((venue, i) => {
+              {this.props.venues.map((venue, i) => {
                 return (
                   <li key={venue.id}>
                     <div>
@@ -55,7 +51,7 @@ class Venues extends React.Component {
 
 const stateToProps = (state)=>{
   return {
-    venues : state.venues
+    venues : state.venues.venueList
   }
 }
 const dispatchToProps = (dispatch)=>{

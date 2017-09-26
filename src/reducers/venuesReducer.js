@@ -1,7 +1,8 @@
 import constants from '../constants'
 
 let initialState = {
-    venueList: []
+    venueList: [],
+    center: {}
 }
 
 export default (state = initialState, action) => {
@@ -9,7 +10,25 @@ export default (state = initialState, action) => {
 
     switch (action.type) {
         case constants.SEARCH_VENUES:
-            newState['venueList'] = action.payload.data.response.venues
+            const venuesList = action.payload.data.response.venues.slice(0, 10)
+            newState['venueList'] = venuesList
+            const averageLat = venuesList.map(function (venue, i, arr) {
+                    return venue.location.lat / arr.length
+                })
+                .reduce(function (a, b) {
+                    return a + b
+                })
+            const averageLng = venuesList.map(function (venue, i, arr) {
+                    return venue.location.lng / arr.length
+                })
+                .reduce(function (a, b) {
+                    return a + b
+                })
+
+            newState['center'] = {
+                lat: averageLat,
+                lng: averageLng
+            }
             return newState
             break;
         default:

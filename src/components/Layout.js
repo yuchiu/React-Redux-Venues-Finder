@@ -16,6 +16,7 @@ class Layout extends React.Component {
             height: 650
           }}>
             <Map
+              
               containerElement={< div style = {{height:100+'%'}}/>}
               mapElement={< div style = {{height:100+'%'}}/>}/>
 
