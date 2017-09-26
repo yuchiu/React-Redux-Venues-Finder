@@ -7,7 +7,8 @@
     "ie>9"
   ],
   "scripts": {
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server",
+    "build": "webpack"
   },
   "dependencies": {
     "axios": "^0.16.2",

@@ -1,5 +1,5 @@
 # venuesGooglemap
-
+view live on [link](https://venues-finder.surge.sh)
 demo:
 
 ![alt text](https://github.com/yuchiu/React-Redux-Venues-Finder/blob/master/demo.gif)
