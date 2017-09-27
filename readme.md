@@ -1,6 +1,6 @@
 # venuesGooglemap
 
-Technology: React ∙ Redux ∙ React-Google-Maps ∙ Webpack ∙ Bootstrap ∙ PostCSS ∙ Autoprefixer
+React ∙ Redux ∙ React-Google-Maps ∙ Webpack ∙ Bootstrap ∙ PostCSS ∙ Autoprefixer
 
 view live on [link](https://venues-finder.surge.sh)
 
