@@ -16,7 +16,7 @@ demo:
 npm i -g cross-env
 
 ```
-Ensure npm scripts works across Linux, Windows, and all environments.
+Ensure npm scripts works properly across Linux, Windows, and all environments.
 
 #### 2. install everything else
 
