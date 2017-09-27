@@ -14,8 +14,12 @@ class Layout extends React.Component {
             height: 650
           }}>
             <Map
-              containerElement={< div style = {{height:100+'%'}}/>}
-              mapElement={< div style = {{height:100+'%'}}/>}/>
+              containerElement={< div style = {
+              style.mapElement
+            } />}
+              mapElement={< div style = {
+              style.mapElement
+            } />}/>
           </div>
           <div className='col-md-6 '>
             <Venues/>
@@ -24,6 +28,12 @@ class Layout extends React.Component {
       </div>
 
     )
+  }
+}
+
+const style = {
+  mapElement: {
+    height: '100%'
   }
 }
 

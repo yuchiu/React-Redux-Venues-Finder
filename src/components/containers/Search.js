@@ -29,7 +29,9 @@ class Search extends React.Component {
 
   handleSearch(e) {
     e.preventDefault()
-    this.props.fetchSearch(this.state.newSearch)
+    this
+      .props
+      .fetchSearch(this.state.newSearch)
     this.setState({
       newSearch: {
         location: '',
@@ -42,23 +44,9 @@ class Search extends React.Component {
     return (
       <div className="row">
         <div className="col-md-12">
-          <div
-            className="jumbotron jumbotron-fluid text-center"
-            style={{
-            background: '#2e3242'
-          }}>
-            <div
-              className="container"
-              style={{
-              color: '#4ee8e2'
-            }}>
-              <a
-                className="display-4 "
-                href="index.html"
-                style={{
-                color: '#4ee8e2',
-                textDecoration: 'none'
-              }}>
+          <div className="jumbotron jumbotron-fluid text-center" style={style.jumbotron}>
+            <div className="container" style={style.container}>
+              <a className="display-4 " href="index.html" style={style.aTag}>
                 Venues Finder
               </a>
               <p className="lead mt-3">Search for Venues around the world.</p>
@@ -104,17 +92,29 @@ class Search extends React.Component {
   }
 }
 
-const stateToProps = (state)=>{
-  return {
+const style = {
+  jumbotron: {
+    background: '#2e3242'
+  },
+  container: {
+    color: '#4ee8e2'
+  },
+  aTag: {
+    color: '#4ee8e2',
+    textDecoration: 'none'
   }
 }
 
-const dispatchToProps = (dispatch)=>{
+const stateToProps = (state) => {
+  return {}
+}
+
+const dispatchToProps = (dispatch) => {
   return {
-    fetchAutoLocate : ()=>{
+    fetchAutoLocate: () => {
       dispatch(actions.fetchAutoLocate())
     },
-    fetchSearch : (newSearch)=>{
+    fetchSearch: (newSearch) => {
       dispatch(actions.fetchSearch(newSearch))
     }
   }

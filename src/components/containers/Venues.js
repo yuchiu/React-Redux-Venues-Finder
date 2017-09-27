@@ -10,9 +10,7 @@ class Venues extends React.Component {
       <div>
         <div className="row">
           <div className="col-md-10 ">
-            <ol style ={{
-              listStyle: 'none'
-            }}>
+            <ol style ={style.orderList}>
               {this
                 .props
                 .venues
@@ -25,6 +23,11 @@ class Venues extends React.Component {
 
       </div>
     )
+  }
+}
+const style = {
+  orderList: {
+    listStyle: 'none'
   }
 }
 
