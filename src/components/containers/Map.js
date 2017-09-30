@@ -1,6 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {withGoogleMap, GoogleMap, Marker} from 'react-google-maps'
+import {withGoogleMap, GoogleMap, Marker, InfoWindow} from 'react-google-maps'
 const {LatLng, LatLngBounds} = google.maps;
 
 class Map extends React.Component {
@@ -8,13 +8,28 @@ class Map extends React.Component {
   constructor() {
     super();
     this.state = {
-      map: null
+      map: null,
+      windowPosition: null
     }
   }
   mapLoaded(map) {
     if (this.state.map != null) 
       return
     this.setState({map: map})
+  }
+  toggleInfoWindow(loc) {
+    console.log('marker clicked ' + JSON.stringify(loc))
+    if (loc == null) {
+      this.setState({windowPosition: null})
+      return
+    }
+    // otherwise get coords of clicked marker and set to state
+    let markerLoc = {
+      lat: loc.lat,
+      lng: loc.lng
+    }
+    this.setState({windowPosition: markerLoc})
+    console.log(this.state.windowPosition)
   }
 
   render() {
@@ -28,7 +43,18 @@ class Map extends React.Component {
             lng: venue.location.lng
           }
         }
-        return <Marker key={i} {...marker}/>
+        return <Marker
+          key={i}
+          {...marker}
+      onClick={this.props.onToggleOpen}>
+          
+      <InfoWindow onCloseClick={this.props.onToggleOpen}>
+        <div>
+          {" sda"}
+          Controlled zoom: {15}
+        </div>
+      </InfoWindow>
+          </Marker>
 
       })
 
