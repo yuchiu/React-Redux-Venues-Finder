@@ -9,7 +9,8 @@ class Map extends React.Component {
     super();
     this.state = {
       map: null,
-      windowPosition: null
+      windowPosition: null,
+      isOpen: false
     }
   }
   mapLoaded(map) {
@@ -17,21 +18,11 @@ class Map extends React.Component {
       return
     this.setState({map: map})
   }
-  toggleInfoWindow(loc) {
-    console.log('marker clicked ' + JSON.stringify(loc))
-    if (loc == null) {
-      this.setState({windowPosition: null})
-      return
-    }
-    // otherwise get coords of clicked marker and set to state
-    let markerLoc = {
-      lat: loc.lat,
-      lng: loc.lng
-    }
-    this.setState({windowPosition: markerLoc})
-    console.log(this.state.windowPosition)
+  
+  onToggleOpen(){
+    this.setState({isOpen : !this.state.isOpen})
+    console.log('clicked toglgle: '+this.state.isOpen)
   }
-
   render() {
     const markers = this
       .props
@@ -43,18 +34,13 @@ class Map extends React.Component {
             lng: venue.location.lng
           }
         }
-        return <Marker
-          key={i}
-          {...marker}
-      onClick={this.props.onToggleOpen}>
-          
-      <InfoWindow onCloseClick={this.props.onToggleOpen}>
-        <div>
-          {" sda"}
-          Controlled zoom: {15}
-        </div>
-      </InfoWindow>
-          </Marker>
+        return <Marker key={i} {...marker} onClick={this.onToggleOpen.bind(this)} isOpen={this.state.isOpen}>
+           {this.state.isOpen && <InfoWindow onCloseClick={this.onToggleOpen.bind(this)}>
+            <div>
+              {venue.name}
+            </div>
+          </InfoWindow>}
+        </Marker>
 
       })
 
