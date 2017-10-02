@@ -14,6 +14,7 @@ export default (state = initialState, action) => {
             newState['venueList'] = venuesList
 
             /* calculate average lat and lng */
+            
             const averageLat = venuesList.map(function (venue, i, arr) {
                     return venue.location.lat / arr.length
                 })
