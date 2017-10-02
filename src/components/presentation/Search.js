@@ -1,7 +1,6 @@
 import React from 'react'
 import superagent from 'superagent'
 import actions from '../../actions/'
-import {connect} from 'react-redux'
 
 class Search extends React.Component {
   constructor() {
@@ -105,19 +104,4 @@ const style = {
   }
 }
 
-const stateToProps = (state) => {
-  return {}
-}
-
-const dispatchToProps = (dispatch) => {
-  return {
-    fetchAutoLocate: () => {
-      dispatch(actions.fetchAutoLocate())
-    },
-    fetchSearch: (newSearch) => {
-      dispatch(actions.fetchSearch(newSearch))
-    }
-  }
-}
-
-export default connect(stateToProps, dispatchToProps)(Search);
+export default Search;

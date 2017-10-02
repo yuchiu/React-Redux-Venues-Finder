@@ -2,13 +2,15 @@
 
 Displaying Venues on Google Map based on locations and keywords.
 
-Using axios to handle async call, then display data on the Google Map with tools like markers, infobox that's provided by the library. demo:
-
-view live on [link](https://venues-finder.surge.sh)
+Using axios to handle async call, then display data on the Google Map with tools like markers, infobox that's provided by the library. 
 
 demo:
 
-![alt text](https://github.com/yuchiu/React-Redux-Venues-Finder/blob/master/demo.gif)
+###view live on [link](https://venues-finder.surge.sh)
+
+
+
+![demo](https://github.com/yuchiu/React-Redux-Venues-Finder/blob/master/demo.gif)
 
 
 ### Usage 

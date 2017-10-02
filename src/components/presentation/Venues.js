@@ -1,6 +1,5 @@
 import React from 'react'
-import {connect} from 'react-redux'
-import Venue from '../presentation/venue'
+import Venue from './venue'
 
 class Venues extends React.Component {
 
@@ -31,11 +30,4 @@ const style = {
   }
 }
 
-const stateToProps = (state) => {
-  return {venues: state.venues.venueList}
-}
-const dispatchToProps = (dispatch) => {
-  return {}
-}
-
-export default connect(stateToProps, dispatchToProps)(Venues);
+export default Venues;
