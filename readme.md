@@ -6,7 +6,7 @@ Using axios to handle async call, then display data on the Google Map with tools
 
 demo:
 
-###view live on [link](https://venues-finder.surge.sh)
+### view live on [link](https://venues-finder.surge.sh)
 
 
 
