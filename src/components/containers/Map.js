@@ -1,7 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {withGoogleMap, GoogleMap, Marker, InfoWindow} from 'react-google-maps'
-const bounds = new google.maps.LatLngBounds();
 
 class Map extends React.Component {
 
@@ -13,12 +12,6 @@ class Map extends React.Component {
       isOpen: false
     }
   }
-  getBound(pos){    
-    console.log(pos)
-    bounds.extend(pos);
-    this.state.map.fitBounds(bounds);
-  }
-
   mapLoaded(map) {
     if (this.state.map != null) 
       return
@@ -30,8 +23,8 @@ class Map extends React.Component {
       isOpen: !this.state.isOpen
     })
   }
-
   render() {
+    const bounds = new google.maps.LatLngBounds();
     const markers = this
       .props
       .venues
@@ -42,7 +35,8 @@ class Map extends React.Component {
             lng: venue.location.lng
           }
         }
-        {this.getBound(marker.position)}
+        bounds.extend(marker.position);
+        this.state.map.fitBounds(bounds);
         return <Marker
           key={i}
           {...marker}
@@ -68,7 +62,6 @@ class Map extends React.Component {
         ref={this
         .mapLoaded
         .bind(this)}
-        defaultZoom={15}
         defaultCenter={this.props.center}
         center={this.props.center}>
         {markers}

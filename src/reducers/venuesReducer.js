@@ -2,7 +2,8 @@ import constants from '../constants'
 
 let initialState = {
     venueList: [],
-    center: {}
+    center: {},
+    bound:[]
 }
 
 export default (state = initialState, action) => {
@@ -31,6 +32,12 @@ export default (state = initialState, action) => {
                 lat: averageLat,
                 lng: averageLng
             }
+            let newBound = [];                        
+            for (let i =0; i<venuesList.length; i++) { 
+                newBound.push(venuesList[i].location);
+            }
+            newState['bound'] = newBound
+
             return newState
             break;
         default:
