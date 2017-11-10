@@ -7,27 +7,19 @@ class Venue extends React.Component {
     return (
       <li>
         <div>
-          <h4 className="mt-4 lead" style ={style.header}>
+          <h4>
             <b>{venue.name}</b>
           </h4>
-          <span className="lead mt-4 mr-4">
+          <span >
             total checked-in:
             <b>{venue.stats.checkinsCount}</b>
           </span>
-          <span className="lead mt-4 mr-4">
+          <span >
             {venue.location.address}</span>
-          <a href={venue.url} style ={style.aTag}>{venue.url}</a>
+          <a href={venue.url}>{venue.url}</a>
         </div>
       </li>
     )
-  }
-}
-const style = {
-  header: {
-    color: 'teal'
-  },
-  aTag: {
-    color: 'teal'
   }
 }
 export default Venue

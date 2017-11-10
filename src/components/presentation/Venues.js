@@ -7,26 +7,17 @@ class Venues extends React.Component {
 
     return (
       <div>
-        <div className="row">
-          <div className="col-md-10 ">
-            <ol style ={style.orderList}>
-              {this
-                .props
-                .venues
-                .map((venue, i) => {
-                  return (<Venue key={venue.id} venue={venue}/>)
-                })}
-            </ol>
-          </div>
-        </div>
+        <ol>
+          {this
+            .props
+            .venues
+            .map((venue, i) => {
+              return (<Venue key={venue.id} venue={venue}/>)
+            })}
+        </ol>
 
       </div>
     )
-  }
-}
-const style = {
-  orderList: {
-    listStyle: 'none'
   }
 }
 

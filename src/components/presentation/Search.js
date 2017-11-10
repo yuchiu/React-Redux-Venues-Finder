@@ -41,16 +41,13 @@ class Search extends React.Component {
 
   render() {
     return (
-      <div className="row">
-        <div className="col-md-12">
-          <div className="jumbotron jumbotron-fluid text-center" style={style.jumbotron}>
-            <div className="container" style={style.container}>
-              <a className="display-4 " href="index.html" style={style.aTag}>
+          <div className="" >
+              <a href="index.html">
                 Venues Finder
               </a>
-              <p className="lead mt-3">Search for Venues around the world.</p>
-              <form className="form-inline  justify-content-center">
-                <div className="form-group">
+              <p className="">Search for Venues around the world.</p>
+              <form className="">
+                <div className="">
                   <input
                     value={this.state.newSearch.location}
                     onChange={this
@@ -58,11 +55,7 @@ class Search extends React.Component {
                     .bind(this, 'location')}
                     placeholder="Where?"
                     className="form-control"
-                    type="text"
-                    style={{
-                    width: 300,
-                    marginRight: 10
-                  }}/>
+                    type="text"/>
                   <input
                     value={this.state.newSearch.filter}
                     onChange={this
@@ -70,37 +63,17 @@ class Search extends React.Component {
                     .bind(this, 'filter')}
                     placeholder="gym, coffee, etc.."
                     className="form-control"
-                    type="text"
-                    style={{
-                    marginRight: 5
-                  }}/>
+                    type="text"/>
                 </div>
                 <button
-                  className="btn btn-outline-info"
                   type="submit"
                   onClick={this
                   .handleSearch
                   .bind(this)}>Search
                 </button>
               </form>
-            </div>
           </div>
-        </div>
-      </div>
     )
-  }
-}
-
-const style = {
-  jumbotron: {
-    background: '#2e3242'
-  },
-  container: {
-    color: '#4ee8e2'
-  },
-  aTag: {
-    color: '#4ee8e2',
-    textDecoration: 'none'
   }
 }
 
