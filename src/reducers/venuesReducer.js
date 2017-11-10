@@ -10,7 +10,8 @@ export default (state = initialState, action) => {
 
     switch (action.type) {
         case constants.SEARCH_VENUES:
-            const venuesList = action.payload.data.response.venues.slice(0, 8)
+            const venuesList = action.payload.data.response.venues.slice(0, 30)
+            console.log(action.payload.data.response)
             newState['venueList'] = venuesList
 
             /* calculate average lat and lng */
