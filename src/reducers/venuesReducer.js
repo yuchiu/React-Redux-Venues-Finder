@@ -10,20 +10,20 @@ export default (state = initialState, action) => {
 
     switch (action.type) {
         case constants.SEARCH_VENUES:
-            const venuesList = action.payload.data.response.venues.slice(0, 30)
-            console.log(action.payload.data.response)
+        console.log(action.payload.data.response.groups[0].items)
+            const venuesList = action.payload.data.response.groups[0].items
             newState['venueList'] = venuesList
 
             /* calculate average lat and lng */
             
-            const averageLat = venuesList.map(function (venue, i, arr) {
-                    return venue.location.lat / arr.length
+            const averageLat = venuesList.map(function (listItem, i, arr) {
+                    return listItem.venue.location.lat / arr.length
                 })
                 .reduce(function (a, b) {
                     return a + b
                 })
-            const averageLng = venuesList.map(function (venue, i, arr) {
-                    return venue.location.lng / arr.length
+            const averageLng = venuesList.map(function (listItem, i, arr) {
+                    return listItem.venue.location.lng / arr.length
                 })
                 .reduce(function (a, b) {
                     return a + b

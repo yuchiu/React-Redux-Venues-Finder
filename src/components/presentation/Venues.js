@@ -12,7 +12,7 @@ class Venues extends React.Component {
             .props
             .venues
             .map((venue, i) => {
-              return (<Venue key={venue.id} venue={venue}/>)
+              return (<Venue key={venue.venue.id} venue={venue}/>)
             })}
         </ol>
 

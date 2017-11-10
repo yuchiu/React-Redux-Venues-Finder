@@ -8,15 +8,15 @@ class Venue extends React.Component {
       <li>
         <div>
           <h4>
-            <b>{venue.name}</b>
+            <b>{venue.venue.name}</b>
           </h4>
           <span >
             total checked-in:
-            <b>{venue.stats.checkinsCount}</b>
+            <b>{venue.venue.stats.checkinsCount}</b>
           </span>
           <span >
-            {venue.location.address}</span>
-          <a href={venue.url}>{venue.url}</a>
+            {venue.venue.location.address}</span>
+          <a href={venue.venue.url}>{venue.venue.url}</a>
         </div>
       </li>
     )

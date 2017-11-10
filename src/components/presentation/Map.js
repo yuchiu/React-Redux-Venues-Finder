@@ -32,8 +32,8 @@ class Map extends React.Component {
       .map((venue, i) => {
         const marker = {
           position: {
-            lat: venue.location.lat,
-            lng: venue.location.lng
+            lat: venue.venue.location.lat,
+            lng: venue.venue.location.lng
           }
         }
         bounds.extend(marker.position);
@@ -53,7 +53,7 @@ class Map extends React.Component {
             .onToggleOpen
             .bind(this)}>
             <div>
-              {venue.name}
+              {venue.venue.name}
             </div>
           </InfoWindow>}
         </Marker>

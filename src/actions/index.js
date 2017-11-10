@@ -20,11 +20,14 @@ let actions = {
             })
         }
     },
-    //for fetching photos
+    // search
+    //axios.get(`${URL}search/?v=${v}&near=${searchItem.location}&client_id=${API}&client_secret=${SECRET}&query=${searchItem.filter}`)
+    //explore
     //https://api.foursquare.com/v2/venues/explore?venuePhotos=1&limit=1&v=20160215&ll=40.745741050065504,-73.98825287818909&client_secret=SVXG0WJXAEE2QLJLVOO2DHVZUAL1SLKPZP1FOR12BMVTR4PF&client_id=MBZIFEYQSPICJ5MAYPJIOL4CHM44DVAPROARKLUVWQXUXGJD&query=Stumptown%20Coffee%20Roasters
+    //`${URL}explore?venuePhotos=1&v=${v}&near=${searchItem.location}&client_id=${API}&client_secret=${SECRET}&query=${searchItem.filter}`
     fetchSearch: (searchItem) => {
         return (dispatch) => {
-            axios.get(`${URL}search/?v=${v}&near=${searchItem.location}&client_id=${API}&client_secret=${SECRET}&query=${searchItem.filter}&venuePhotos=1`)
+            axios.get(`${URL}explore?venuePhotos=1&limit=20&v=${v}&near=${searchItem.location}&client_id=${API}&client_secret=${SECRET}&query=${searchItem.filter}`)
                 .then((response) => {
                     console.log()
                     dispatch({
