@@ -42,30 +42,29 @@ class Search extends React.Component {
   render() {
     return (
       <div id="search-container">
-        <a href="index.html">
+        <a id="search-title"href="index.html">
           Venues Finder
         </a>
-        <p className="">Search for Venues around the world.</p>
-        <form className="">
-          <div className="">
+        <p id="search-p">Search for Venues around the world.</p>
+        <form id="search-form">
             <input
+              id="search-input-location"
               value={this.state.newSearch.location}
               onChange={this
               .handleChange
               .bind(this, 'location')}
               placeholder="Where?"
-              className="form-control"
               type="text"/>
             <input
+              id="search-input-filter"
               value={this.state.newSearch.filter}
               onChange={this
               .handleChange
               .bind(this, 'filter')}
               placeholder="gym, coffee, etc.."
-              className="form-control"
               type="text"/>
-          </div>
           <button
+          id="search-btn"
             type="submit"
             onClick={this
             .handleSearch
