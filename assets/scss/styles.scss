@@ -16,7 +16,23 @@
 
 //right section
 #right-section {
-  margin-left: 700px;
+  margin-left: 750px;
   display: flex;
   flex-direction: column;
+}
+#search-container{
+
+}
+#venue-list-container{
+  display: flex;
+  flex-wrap: wrap;
+
+}
+.venue-container{
+  display:flex;
+  flex-direction: column;
+  list-style: none;
+}
+.venue-photo{
+  width:90%;
 }

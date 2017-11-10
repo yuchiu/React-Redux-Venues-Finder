@@ -23,6 +23,7 @@ class Map extends React.Component {
     })
   }
   render() {
+    
     const bounds = new google
       .maps
       .LatLngBounds();
@@ -36,6 +37,8 @@ class Map extends React.Component {
             lng: venue.venue.location.lng
           }
         }
+        
+    const thumbnailUrl = venue.venue.featuredPhotos.items[0].prefix +'80x80'+ venue.venue.featuredPhotos.items[0].suffix
         bounds.extend(marker.position);
         this
           .state
@@ -53,6 +56,7 @@ class Map extends React.Component {
             .onToggleOpen
             .bind(this)}>
             <div>
+              <img src={thumbnailUrl}></img>
               {venue.venue.name}
             </div>
           </InfoWindow>}

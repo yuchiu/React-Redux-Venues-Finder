@@ -3,20 +3,16 @@ import Venue from './venue'
 
 class Venues extends React.Component {
 
-  
   render() {
     return (
-      <div>
-        <ol>
-          {this
-            .props
-            .venues
-            .map((venue, i) => {
-              return (<Venue key={venue.venue.id} venue={venue}/>)
-            })}
-        </ol>
-
-      </div>
+      <ul id="venue-list-container">
+        {this
+          .props
+          .venues
+          .map((venue, i) => {
+            return (<Venue key={venue.venue.id} venue={venue}/>)
+          })}
+      </ul>
     )
   }
 }

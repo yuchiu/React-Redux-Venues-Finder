@@ -41,38 +41,38 @@ class Search extends React.Component {
 
   render() {
     return (
-          <div className="" >
-              <a href="index.html">
-                Venues Finder
-              </a>
-              <p className="">Search for Venues around the world.</p>
-              <form className="">
-                <div className="">
-                  <input
-                    value={this.state.newSearch.location}
-                    onChange={this
-                    .handleChange
-                    .bind(this, 'location')}
-                    placeholder="Where?"
-                    className="form-control"
-                    type="text"/>
-                  <input
-                    value={this.state.newSearch.filter}
-                    onChange={this
-                    .handleChange
-                    .bind(this, 'filter')}
-                    placeholder="gym, coffee, etc.."
-                    className="form-control"
-                    type="text"/>
-                </div>
-                <button
-                  type="submit"
-                  onClick={this
-                  .handleSearch
-                  .bind(this)}>Search
-                </button>
-              </form>
+      <div id="search-container">
+        <a href="index.html">
+          Venues Finder
+        </a>
+        <p className="">Search for Venues around the world.</p>
+        <form className="">
+          <div className="">
+            <input
+              value={this.state.newSearch.location}
+              onChange={this
+              .handleChange
+              .bind(this, 'location')}
+              placeholder="Where?"
+              className="form-control"
+              type="text"/>
+            <input
+              value={this.state.newSearch.filter}
+              onChange={this
+              .handleChange
+              .bind(this, 'filter')}
+              placeholder="gym, coffee, etc.."
+              className="form-control"
+              type="text"/>
           </div>
+          <button
+            type="submit"
+            onClick={this
+            .handleSearch
+            .bind(this)}>Search
+          </button>
+        </form>
+      </div>
     )
   }
 }
