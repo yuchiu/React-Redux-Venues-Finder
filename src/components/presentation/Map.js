@@ -7,8 +7,7 @@ class Map extends React.Component {
     super();
     this.state = {
       map: null,
-      windowPosition: null,
-      isOpen: false
+      windowPosition: null
     }
   }
   mapLoaded(map) {
@@ -17,13 +16,16 @@ class Map extends React.Component {
     this.setState({map: map})
   }
 
-  onToggleOpen() {
-    this.setState({
-      isOpen: !this.state.isOpen
-    })
+  toggleInfoWindow(loc) {
+    if (loc == null) {
+      this.setState({windowPosition: null})
+      return
+    }
+    this.setState({windowPosition: loc})
+    console.log(loc)
   }
   render() {
-    
+
     const bounds = new google
       .maps
       .LatLngBounds();
@@ -37,8 +39,9 @@ class Map extends React.Component {
             lng: venue.venue.location.lng
           }
         }
-        
-    const thumbnailUrl = venue.venue.featuredPhotos.items[0].prefix +'80x80'+ venue.venue.featuredPhotos.items[0].suffix
+
+        const thumbnailUrl = venue.venue.featuredPhotos.items[0].prefix + '80x80' + venue.venue.featuredPhotos.items[0].suffix
+        const loc = venue.venue.location.lat
         bounds.extend(marker.position);
         this
           .state
@@ -48,18 +51,20 @@ class Map extends React.Component {
           key={i}
           {...marker}
           onClick={this
-          .onToggleOpen
-          .bind(this)}
-          isOpen={this.state.isOpen}>
-          {this.state.isOpen && <InfoWindow
-            onCloseClick={this
-            .onToggleOpen
-            .bind(this)}>
-            <div>
-              <img src={thumbnailUrl}></img>
-              {venue.venue.name}
-            </div>
-          </InfoWindow>}
+          .toggleInfoWindow
+          .bind(this, marker.position)}>
+          {this.state.windowPosition!==null &&< InfoWindow
+          options = {{pixelOffset: new google.maps.Size(0,-30)}}
+          position = {
+            this.state.windowPosition
+          }
+          onCloseClick = {
+            this
+              .toggleInfoWindow
+              .bind(this, null)
+          } > <div>
+            <img src={thumbnailUrl}/> {venue.venue.name}
+          </div> </InfoWindow>}
         </Marker>
 
       })
