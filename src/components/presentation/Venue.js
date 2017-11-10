@@ -3,21 +3,21 @@ import React from 'react'
 class Venue extends React.Component {
 
   render() {
-    const venue = this.props.venue
+    const venue = this.props.venue.venue
+    const photoUrl = this.props.venue.venue.photos.groups[0].items[0].prefix+"300x300"+this.props.venue.venue.photos.groups[0].items[0].suffix
     return (
       <li>
-        <div>
+          <img src={photoUrl}></img>
           <h4>
-            <b>{venue.venue.name}</b>
+            <b>{venue.name}</b>
           </h4>
           <span >
             total checked-in:
-            <b>{venue.venue.stats.checkinsCount}</b>
+            <b>{venue.stats.checkinsCount}</b>
           </span>
           <span >
-            {venue.venue.location.address}</span>
-          <a href={venue.venue.url}>{venue.venue.url}</a>
-        </div>
+            {venue.location.address}</span>
+          <a href={venue.url}>{venue.url}</a>
       </li>
     )
   }

@@ -3,8 +3,8 @@ import Venue from './venue'
 
 class Venues extends React.Component {
 
+  
   render() {
-
     return (
       <div>
         <ol>
