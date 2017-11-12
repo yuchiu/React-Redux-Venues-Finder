@@ -11,19 +11,18 @@ class Venue extends React.Component {
       <li className="venue-container">
         <img className="venue-photo"src={photoUrl}></img>
         {/* <img className="venue-photo"src={thumbnailUrl}></img> */}
-        <h4>
+        <h4 className="venue-title venue-ele">
           <b>{venue.name}</b>
         </h4>
 
         <div></div>
 
-        <span >
-          total checked-in:
-          <b>{venue.stats.checkinsCount}</b>
-        </span>
-        <span >
-          {venue.location.address}</span>
-        <a href={venue.url}>{venue.url}</a>
+        <p className="venue-checked-in venue-ele">
+          Checked In: <b>{venue.stats.checkinsCount}</b>
+        </p>
+        <p className="venue-address venue-ele">
+          {venue.location.address}</p>
+        <a className="venue-url venue-ele" href={venue.url}>More Info</a>
       </li>
     )
   }
