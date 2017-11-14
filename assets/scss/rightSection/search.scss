@@ -2,8 +2,7 @@
 #search-container {
     text-align: center;
     padding-top: 80px;
-    height: 26vh;
-    min-height: 220px;
+    height: 220px;
     background: grey;
     width: 100%;
     background: #5D4157;
@@ -97,4 +96,48 @@
         position: relative;
         top: 2px;
     }
+}
+
+@include maxMQ(1050px) {
+    #search-title {
+        font-size: 2.5em;
+    }
+    
+    #search-p {
+        font-size: 1.2em;
+    }
+    .search-input {
+        width: 120px;
+    }
+    
+  }
+
+
+@include maxMQ(650px) {
+    
+#search-container {
+    padding-top: 20px;
+    height: 240px;
+}
+#search-title {
+    font-size: 2em;
+}
+
+#search-p {
+    font-size: 1em;
+}
+#search-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.search-input {
+    width: 300px;
+    margin: 5px ;
+}
+
+#search-btn {
+    margin-top:5px;
+    width:315px;
+}
 }

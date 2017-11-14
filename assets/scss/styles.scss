@@ -1,6 +1,7 @@
+
+@import 'mixins';
 @import './leftSection/leftSection.scss';
 @import './rightSection/rightSection.scss';
-
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 body{
   font-family: 'Raleway', sans-serif;
@@ -9,13 +10,37 @@ body{
 //left section
 #left-section {
   position: fixed;
-  width: 650px;
+  width: 600px;
   height: 100vh;
 }
 
 //right section
 #right-section {
-  margin-left: 650px;
+  margin-left: 600px;
   display: flex;
   flex-direction: column;
+}
+@include maxMQ(1550px) {
+  #left-section {
+    width: 400px;
+  }
+  #right-section {
+    margin-left: 400px;
+  }
+}
+@include maxMQ(850px) {
+  #layout-container{
+    display:flex;
+    flex-direction: column;
+  }
+  #left-section {
+    position: relative;
+    width: 100vw;
+    height: 500px;
+    order:2;
+  }
+  #right-section {
+    margin-left: 0px;
+    order:1;
+  }
 }

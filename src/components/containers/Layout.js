@@ -9,7 +9,7 @@ class Layout extends React.Component {
 
   render() {
     return (
-      <div>
+      <div id="layout-container">
         <div id="left-section">
           <div id="map-container">
             <Map

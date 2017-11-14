@@ -47,13 +47,15 @@ class Map extends React.Component {
           .state
           .map
           .fitBounds(bounds);
+          console.log('this.state.windowPosition: '+this.state.windowPosition)
         return <Marker
           key={i}
           {...marker}
           onClick={this
           .toggleInfoWindow
           .bind(this, marker.position)}>
-          {this.state.windowPosition!==null &&< InfoWindow
+
+          {this.state.windowPosition!==null ?< InfoWindow
           options = {{pixelOffset: new google.maps.Size(0,-30)}}
           position = {
             this.state.windowPosition
@@ -64,7 +66,7 @@ class Map extends React.Component {
               .bind(this, null)
           } > <div>
             <img src={thumbnailUrl}/> {venue.venue.name}
-          </div> </InfoWindow>}
+          </div> </InfoWindow>:null}
         </Marker>
 
       })
