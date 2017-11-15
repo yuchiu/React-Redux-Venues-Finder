@@ -14,8 +14,8 @@
 .venue-photo {
     margin-right: 10px;
     border-radius: 2px;
-    width: 200px;
-    height: 200px;
+    width: 220px;
+    height: 220px;
 }
 
 .venue-content {
@@ -55,6 +55,7 @@
 @include maxMQ(1300px) {
     .venue-container {
         width: 100%;
+        margin: 2% 0;
     }
     .venue-photo {
         width: 230px;

@@ -16,10 +16,12 @@ class Venue extends React.Component {
           </h4>
           <div className="same-line">
 
-            <div className="venue-category venue-ele"><b>{venue.categories[0].name}</b></div>
+            <div className="venue-category venue-ele">
+              <b>{venue.categories[0].name}</b>
+            </div>
             &nbsp;<b>∙</b>&nbsp;
             <p className="venue-checked-in venue-ele">
-            <b>Checked In:</b>&nbsp;{venue.stats.checkinsCount}
+              <b>Checked In:</b>&nbsp;{venue.stats.checkinsCount}
             </p>
           </div>
           <div className="same-line">
@@ -28,7 +30,8 @@ class Venue extends React.Component {
             <p className="venue-address venue-ele">
               {venue.location.address}</p>
           </div>
-          <p className="venue-description venue-ele"><b>Review:</b>&nbsp;{this.props.venue.tips["0"].text}</p>
+          <p className="venue-description venue-ele">
+            <b>Review:</b>&nbsp;{this.props.venue.tips["0"].text}</p>
           <div className="venue-ele">
             <a className="venue-url" href={venue.url} target="_blank">More Info</a>
           </div>

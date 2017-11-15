@@ -31,19 +31,17 @@ class MarkerComponent extends React.Component {
 
         {this.state.windowPosition !== null
           ? <InfoWindow
-        position = {
-          this.state.windowPosition
-        }
-        onCloseClick = {
-          this
-            .toggleInfoWindow
-            .bind(this, null)
-        }><div className="info-windows">
-          <img className="info-img info-ele" src={thumbnailUrl}/> 
-          <p className="info-title info-ele">{this.props.venue.venue.name}</p>
-          <p className="info-address info-ele">{this.props.venue.venue.location.address}</p>
-        </div>
-        </InfoWindow>:null}
+              position={this.state.windowPosition}
+              onCloseClick={this
+              .toggleInfoWindow
+              .bind(this, null)}>
+              <div className="info-windows">
+                <img className="info-img info-ele" src={thumbnailUrl}/>
+                <p className="info-title info-ele">{this.props.venue.venue.name}</p>
+                <p className="info-address info-ele">{this.props.venue.venue.location.address}</p>
+              </div>
+            </InfoWindow>
+          : null}
       </Marker>
     )
   }

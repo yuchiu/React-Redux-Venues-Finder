@@ -36,14 +36,15 @@ class Map extends React.Component {
           .state
           .map
           .fitBounds(bounds);
-          return <MarkerComponent key={i} markerPosition = {marker.position}
-          marker = {marker} venue = {venue}
-          />
+        return <MarkerComponent
+          key={i}
+          markerPosition={marker.position}
+          marker={marker}
+          venue={venue}/>
 
       })
 
     return (
-
       <GoogleMap
         ref={this
         .mapLoaded

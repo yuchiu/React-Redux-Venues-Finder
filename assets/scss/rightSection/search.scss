@@ -5,12 +5,10 @@
     height: 220px;
     background: grey;
     width: 100%;
-    background: #5D4157;
-    /* fallback for old browsers */
-    background: -webkit-linear-gradient(to left, #A8CABA, #5D4157);
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to left, #A8CABA, #5D4157);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #20002c;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #cbb4d4, #20002c);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #cbb4d4, #20002c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
     justify-content: center;
     align-items: center;
     position: relative;
@@ -25,7 +23,7 @@
     right: 0;
     background-image: url('https://i.imgur.com/0w9K8Sx.jpg');
     position: absolute;
-    opacity: 0.7;
+    opacity: 0.8;
     z-index: -1;
 }
 

@@ -1,7 +1,7 @@
 import React from 'react';
-import Search from '../presentation/Search'
-import Map from '../presentation/Map'
-import Venues from '../presentation/Venues'
+import Search from '../presentation/Search/'
+import Map from '../presentation/Map/'
+import Venues from '../presentation/Venues/'
 import actions from '../../actions'
 import {connect} from 'react-redux'
 
