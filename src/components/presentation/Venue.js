@@ -4,7 +4,7 @@ class Venue extends React.Component {
 
   render() {
     const venue = this.props.venue.venue
-    const photoUrl = this.props.venue.venue.photos.groups[0].items[0].prefix + "250x250" + this.props.venue.venue.photos.groups[0].items[0].suffix
+    const photoUrl = this.props.venue.venue.photos.groups[0].items[0].prefix + "300x300" + this.props.venue.venue.photos.groups[0].items[0].suffix
 
     const ratingColor = venue.ratingColor
     return (
@@ -19,7 +19,7 @@ class Venue extends React.Component {
             <div className="venue-category venue-ele"><b>{venue.categories[0].name}</b></div>
             &nbsp;<b>∙</b>&nbsp;
             <p className="venue-checked-in venue-ele">
-            <b>checked In:</b>&nbsp;{venue.stats.checkinsCount}
+            <b>Checked In:</b>&nbsp;{venue.stats.checkinsCount}
             </p>
           </div>
           <div className="same-line">
@@ -28,7 +28,7 @@ class Venue extends React.Component {
             <p className="venue-address venue-ele">
               {venue.location.address}</p>
           </div>
-          <p className="venue-description venue-ele"><b>review:</b>&nbsp;{this.props.venue.tips["0"].text}</p>
+          <p className="venue-description venue-ele"><b>Review:</b>&nbsp;{this.props.venue.tips["0"].text}</p>
           <div className="venue-ele">
             <a className="venue-url" href={venue.url} target="_blank">More Info</a>
           </div>

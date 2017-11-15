@@ -28,6 +28,14 @@ body{
     margin-left: 400px;
   }
 }
+@include maxMQ(1100px) {
+  #left-section {
+    width: 350px;
+  }
+  #right-section {
+    margin-left: 350px;
+  }
+}
 @include maxMQ(850px) {
   #layout-container{
     display:flex;
@@ -35,7 +43,7 @@ body{
   }
   #left-section {
     position: relative;
-    width: 100vw;
+    width: 100%;
     height: 500px;
     order:2;
   }
