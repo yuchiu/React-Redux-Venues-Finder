@@ -31,7 +31,7 @@ class MarkerComponent extends React.Component {
         .bind(this, markerPosition)}>
 
         {this.state.windowPosition !== null
-          ? < InfoWindow
+          ? <InfoWindow
         options = {{pixelOffset: new google.maps.Size(0,-30)}}
         position = {
           this.state.windowPosition
@@ -40,9 +40,10 @@ class MarkerComponent extends React.Component {
           this
             .toggleInfoWindow
             .bind(this, null)
-        } > <div>
+        }><div>
           <img src={thumbnailUrl}/> {this.props.venue.venue.name}
-        </div> </InfoWindow>:null}
+        </div>
+        </InfoWindow>:null}
       </Marker>
     )
   }
