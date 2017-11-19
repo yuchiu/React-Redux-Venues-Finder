@@ -5,7 +5,7 @@ class Search extends React.Component {
   render() {
     return (
       <div id="search-container">
-        <a id="search-title" href="index.html">
+        <a id="search-title" href="/">
           Explorer
         </a>
         <p id="search-p">Find travel hot spots around the world!</p>

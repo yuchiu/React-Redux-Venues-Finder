@@ -1,34 +1,17 @@
 //search
 #search-container {
     text-align: center;
-    padding-top: 80px;
-    height: 220px;
+    height: 80px;
     background: grey;
     width: 100%;
-    background: #20002c;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #cbb4d4, #20002c);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #cbb4d4, #20002c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    
-    justify-content: center;
-    align-items: center;
-    position: relative;
+    display: flex;
+    position: fixed;
     z-index: 1;
 }
 
-#search-container::after {
-    content: "";
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    background-image: url('https://i.imgur.com/0w9K8Sx.jpg');
-    position: absolute;
-    opacity: 0.8;
-    z-index: -1;
-}
 
 #search-title {
-    font-size: 3em;
+    font-size: 2.5em;
     font-weight: bold;
     text-decoration: none;
     color: white;
@@ -36,7 +19,7 @@
 }
 
 #search-p {
-    font-size: 1.5em;
+    font-size: 1.2em;
     color: white;
     opacity: 0.95;
     text-shadow: 2px 3px #000;
@@ -97,11 +80,11 @@
 
 @include maxMQ(1050px) {
     #search-title {
-        font-size: 2.5em;
+        font-size: 2em;
     }
     
     #search-p {
-        font-size: 1.2em;
+        font-size: 1em;
     }
     .search-input {
         width: 120px;
@@ -113,15 +96,16 @@
 @include maxMQ(650px) {
     
 #search-container {
+    flex-direction: column;
     padding-top: 20px;
-    height: 240px;
+    height: 220px;
 }
 #search-title {
-    font-size: 2em;
+    font-size: 1.5em;
 }
 
 #search-p {
-    font-size: 1em;
+    font-size: 0.8em;
 }
 #search-form {
     display: flex;
@@ -135,6 +119,7 @@
 
 #search-btn {
     margin-top:5px;
-    width:315px;
+    margin-left: 0;
+    width:320px;
 }
 }

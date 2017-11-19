@@ -10,6 +10,10 @@ class Layout extends React.Component {
   render() {
     return (
       <div id="layout-container">
+      <Search
+        id="search-container"
+        fetchAutoLocate={this.props.fetchAutoLocate}
+        fetchSearch={this.props.fetchSearch}/>
         <div id="left-section">
           <div id="map-container">
             <Map
@@ -20,10 +24,6 @@ class Layout extends React.Component {
           </div>
         </div>
         <div id="right-section">
-          <Search
-            id="search-container"
-            fetchAutoLocate={this.props.fetchAutoLocate}
-            fetchSearch={this.props.fetchSearch}/>
           <Venues id="venues-container" venues={this.props.venues}/>
         </div>
       </div>
