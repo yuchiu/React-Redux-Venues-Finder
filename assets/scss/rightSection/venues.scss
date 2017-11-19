@@ -2,26 +2,32 @@
 #venue-list-container {
     display: flex;
     flex-wrap: wrap;
+    padding-left:15px;
+    width:93%;
+    margin-left:15px;
+    border: 1px solid rgb(230, 230, 230);
 }
 
 .venue-container {
-    margin: 2% 0.5%;
+    margin-top: 15px;
     display: flex;
     list-style: none;
-    width: 48%;
+    width: 100%;
+    height:170px;
+    border-bottom: 1px solid rgb(230, 230, 230);
 }
 
 .venue-photo {
     margin-right: 10px;
     border-radius: 2px;
-    width: 220px;
-    height: 220px;
+    width: 150px;
+    height: 150px;
 }
 
 .venue-content {
     display: flex;
     flex-direction: column;
-    font-size: 15px;
+    font-size: 13px;
 }
 
 .venue-ele {
@@ -30,11 +36,11 @@
 
 .same-line {
     display: flex;
-    margin: 5px 0;
+    margin: 1px 0;
 }
 
 .venue-title {
-    font-size: 22px;
+    font-size: 17px;
     margin-bottom: 5px;
 }
 
@@ -47,29 +53,48 @@
 .venue-address {}
 
 .venue-description {
-    margin-top: 5px;
 }
-
-.venue-url {}
+.venue-icon-container{
+    margin: 0;
+    position: relative;
+}
+.venue-url {
+    position: absolute;
+    top:0px;
+    left:0px;
+    margin-top:30px;
+    text-decoration: none;
+    color: teal;
+}
 
 @include maxMQ(1300px) {
     .venue-container {
-        width: 100%;
         margin: 2% 0;
     }
-    .venue-photo {
-        width: 230px;
-        height: 230px;
+    .venue-url {
+        margin-top:20px;
     }
 }
 
 @include maxMQ(650px) {
+    #venue-list-container {
+        display: flex;
+        flex-wrap: wrap;
+        padding:0;
+        width:90%;
+        margin-left:5%;
+    }
+    
     .venue-container {
         display: flex;
         flex-direction: column;
         justify-content: center;
         text-align: center;
         align-items: center;
+        height:400px;
+        margin: 0px;
+        margin-top: -20px;
+        padding:0;
     }
     .same-line {
         justify-content: center;
@@ -78,7 +103,17 @@
     }
     .venue-photo {
         margin-right: 0px;
-        width: 300px;
-        height: 300px;
+        width: 200px;
+        height: 200px;
     }
+    .venue-url {
+        margin-top:10px;
+    }
+    .venue-title {
+        font-size: 14px;
+    }
+    .venue-content {
+        font-size: 12px;
+    }
+    
 }
