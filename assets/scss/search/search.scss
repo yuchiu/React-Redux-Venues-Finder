@@ -7,9 +7,9 @@
     position: fixed;
     z-index: 1;
     align-items: center;
-    background: #a5b1c2;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #a5b1c2, #cfdef3, #a5b1c2);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #a5b1c2, #cfdef3, #a5b1c2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #889ab6;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #889ab6, #cfdef3, #889ab6);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #889ab6, #cfdef3, #889ab6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 }
 
@@ -39,12 +39,14 @@ background: linear-gradient(to right, #a5b1c2, #cfdef3, #a5b1c2); /* W3C, IE 10+
 .search-input {
     height:18px;
     margin: 0 6px;
-    padding: 8px;
+    padding: 8px 8px 5px 8px;
     width: 200px;
     border-radius: 2px;
-    border: 1px rgb(184, 184, 184) solid;
-    color: #515151;
+    border:none;
+    border-bottom: 2px rgb(255, 255, 255) solid;
+    color: #ffffff;
     font-size:17px;
+    background: transparent;
     &:focus {
         outline: none;
     }
