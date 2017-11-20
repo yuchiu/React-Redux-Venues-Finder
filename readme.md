@@ -1,16 +1,14 @@
-# venuesGooglemap
+# Travel Hotspots
+Displaying travel hotspot on Google Map based on locations and keywords.
 
-Displaying Venues on Google Map based on locations and keywords.
-
-Using axios to handle async call, then display data on the Google Map with tools like markers, infobox that's provided by the library. 
 
 demo:
 
-### view live on [link](https://venues-finder.surge.sh)
+### view live on [link](https://travel-hotspots.surge.sh)
 
 
 
-![demo](https://github.com/yuchiu/React-Redux-Venues-Finder/blob/master/demo.gif)
+![demo](https://github.com/yuchiu/travel-hotspots/blob/master/demo.gif)
 
 
 ### Usage 
