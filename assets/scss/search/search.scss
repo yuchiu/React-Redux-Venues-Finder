@@ -2,12 +2,15 @@
 #search-container {
     text-align: center;
     height: 70px;
-    background: grey;
     width: 100%;
     display: flex;
     position: fixed;
     z-index: 1;
     align-items: center;
+    background: #a5b1c2;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #a5b1c2, #cfdef3, #a5b1c2);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #a5b1c2, #cfdef3, #a5b1c2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 
 #search-text-container {
@@ -18,18 +21,11 @@
 }
 
 #search-title {
-    font-size: 2.5em;
-    font-weight: bold;
+    font-family: 'Berkshire Swash', cursive;
+    font-size: 2.7em;
+    margin-left:20px;
     text-decoration: none;
-    color: white;
-    text-shadow: 2px 3px #000;
-}
-
-#search-p {
-    font-size: 1.2em;
-    color: white;
-    opacity: 0.95;
-    text-shadow: 2px 3px #000;
+    color: #f7fffb;
 }
 
 #search-form {
@@ -41,12 +37,14 @@
 }
 
 .search-input {
-    height:20px;
+    height:18px;
     margin: 0 6px;
-    padding: 10px;
-    width: 160px;
+    padding: 8px;
+    width: 200px;
     border-radius: 2px;
     border: 1px rgb(184, 184, 184) solid;
+    color: #515151;
+    font-size:17px;
     &:focus {
         outline: none;
     }
@@ -58,11 +56,12 @@
 
 #search-btn {
     height:40px;
+    width: 140px;
     margin-left: 6px;
     font-size: 1.3em;
     font-weight: bold;
     color: #fff;
-    background-color: #7e67ff;
+    background-color: #8cc0ab;
     -moz-border-radius: 3px;
     border-radius: 3px;
     border: none;
@@ -77,11 +76,13 @@
     -o-transition: all 1200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
     transition: all 1200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
     border-radius: 3px;
-    box-shadow: #ffee55 0 0px 0px 0px inset, 0 0 22px #525068;
+    box-shadow: #dacdba 0 0px 0px 0px inset, 0 0 3px #666;
     text-shadow: #fff 0 0 1px inset, #fff 0 0 1px inset, #fff 0 0 1px inset;
     &:hover {
-        box-shadow: #7e67ff 0 0px 0px 40px inset;
-        color: #fff;
+      border-color: #308463;
+      background: #308463;
+    text-shadow:  #fff 0 0 25px;
+      box-shadow: 0 0 3px #308463, 0 0 50px #308463;
     }
     &:focus {
         outline: none !important;
@@ -112,7 +113,7 @@
         height: 220px;
     }
     #search-title {
-        font-size: 1.5em;
+        font-size: 2.5em;
     }
     #search-p {
         font-size: 0.8em;

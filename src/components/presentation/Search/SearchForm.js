@@ -26,6 +26,7 @@ class SearchForm extends React.Component {
 
   handleSearch(e) {
     e.preventDefault()
+    if(this.state.newSearch.location!==''){
     this
       .props
       .fetchSearch(this.state.newSearch)
@@ -35,6 +36,11 @@ class SearchForm extends React.Component {
         filter: ''
       }
     })
+    }
+
+    else{
+      alert("location can't be blank.")
+    }
   }
 
   render() {
@@ -56,14 +62,14 @@ class SearchForm extends React.Component {
           onChange={this
           .handleChange
           .bind(this, 'filter')}
-          placeholder="gym, coffee, etc.."
+          placeholder="park, coffee, etc.."
           type="text"/>
         <button
           id="search-btn"
           type="submit"
           onClick={this
           .handleSearch
-          .bind(this)}>Search
+          .bind(this)}>Search <i className="fa fa-search" aria-hidden="true"></i>
         </button>
       </form>
     )

@@ -64,125 +64,80 @@ const mapOptions = {
   // The style is copy from https://snazzymaps.com/style/2/midnight-commander
   styles:[
     {
-        "featureType": "landscape.man_made",
-        "elementType": "geometry.fill",
-        "stylers": [
-            {
-                "color": "#e9e5dc"
-            }
-        ]
-    },
-    {
-        "featureType": "landscape.natural",
-        "elementType": "geometry.fill",
+        "featureType": "administrative",
+        "elementType": "all",
         "stylers": [
             {
                 "visibility": "on"
             },
             {
-                "color": "#b8cb93"
+                "lightness": 33
             }
         ]
     },
     {
-        "featureType": "poi",
+        "featureType": "landscape",
         "elementType": "all",
         "stylers": [
             {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "poi.business",
-        "elementType": "all",
-        "stylers": [
-            {
-                "visibility": "simplified"
-            }
-        ]
-    },
-    {
-        "featureType": "poi.medical",
-        "elementType": "all",
-        "stylers": [
-            {
-                "visibility": "on"
+                "color": "#f2e5d4"
             }
         ]
     },
     {
         "featureType": "poi.park",
-        "elementType": "all",
+        "elementType": "geometry",
         "stylers": [
             {
-                "visibility": "on"
+                "color": "#c5dac6"
             }
         ]
     },
     {
         "featureType": "poi.park",
-        "elementType": "geometry.fill",
-        "stylers": [
-            {
-                "color": "#ccdca1"
-            }
-        ]
-    },
-    {
-        "featureType": "poi.sports_complex",
-        "elementType": "all",
+        "elementType": "labels",
         "stylers": [
             {
                 "visibility": "on"
+            },
+            {
+                "lightness": 20
             }
         ]
     },
     {
         "featureType": "road",
-        "elementType": "geometry.fill",
+        "elementType": "all",
         "stylers": [
             {
-                "hue": "#ff0000"
-            },
-            {
-                "saturation": -100
-            },
-            {
-                "lightness": 99
+                "lightness": 20
             }
         ]
     },
     {
-        "featureType": "road",
-        "elementType": "geometry.stroke",
+        "featureType": "road.highway",
+        "elementType": "geometry",
         "stylers": [
             {
-                "color": "#808080"
-            },
-            {
-                "lightness": 54
-            },
-            {
-                "visibility": "off"
+                "color": "#c5c6c6"
             }
         ]
     },
     {
-        "featureType": "road",
-        "elementType": "labels.text.fill",
+        "featureType": "road.arterial",
+        "elementType": "geometry",
         "stylers": [
             {
-                "color": "#767676"
+                "color": "#e4d7c6"
             }
         ]
     },
     {
-        "featureType": "road",
-        "elementType": "labels.text.stroke",
+        "featureType": "road.local",
+        "elementType": "geometry",
         "stylers": [
             {
-                "color": "#ffffff"
+                "color": "#fbfaf7"
             }
         ]
     },
@@ -191,13 +146,10 @@ const mapOptions = {
         "elementType": "all",
         "stylers": [
             {
-                "saturation": 43
+                "visibility": "on"
             },
             {
-                "lightness": -11
-            },
-            {
-                "color": "#89cada"
+                "color": "#acbcc9"
             }
         ]
     }

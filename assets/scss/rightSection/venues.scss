@@ -19,10 +19,10 @@
 }
 
 .venue-photo {
-    margin-right: 10px;
+            margin-right: 10px;
     border-radius: 2px;
-    width: 150px;
-    height: 150px;
+    max-width: 150px;
+    max-height: 150px;
 }
 
 .venue-content {

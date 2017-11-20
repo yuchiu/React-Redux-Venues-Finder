@@ -6,9 +6,8 @@ class Search extends React.Component {
     return (
       <div id="search-container">
         <a id="search-title" href="/">
-          Explorer
+          Travel <b>Hotspots</b> <i className="fa fa-location-arrow" aria-hidden="true"></i>
         </a>
-        <p id="search-p">Find travel hot spots around the world!</p>
         <SearchForm
           fetchAutoLocate={this.props.fetchAutoLocate}
           fetchSearch={this.props.fetchSearch}/>
