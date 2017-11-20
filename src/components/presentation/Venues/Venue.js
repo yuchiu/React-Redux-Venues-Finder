@@ -21,24 +21,24 @@ class Venue extends React.Component {
             </div>
             &nbsp;|&nbsp;
             <div className="venue-phone venue-ele">{venue.contact.formattedPhone}</div>
-            &nbsp;|&nbsp;
-            <p className="venue-checked-in venue-ele">
-              Checked In:&nbsp;{venue.stats.checkinsCount}
-            </p>
           </div>
           <div className="same-line">
             <p className="venue-address venue-ele">
-              {venue.location.address}</p>
+              {venue.location.formattedAddress[0]}</p>
           </div>
-          <p className="venue-description venue-ele">
-            Recent Review:&nbsp;{this.props.venue.tips["0"].text}</p>
-          <div className="same-line">
-            <div className="venue-icon-container">
-              <a className="venue-url" href={venue.url} target="_blank">
-                <i className="fa fa-external-link fa-2x" aria-hidden="true"></i>
-              </a>
-            </div>
+
+          <div className="venue-icon-line">
+            <a className="venue-url" href={venue.url} target="_blank">
+              <i className="fa fa-external-link fa-2x" aria-hidden="true"></i>
+            </a>
+            <p className="venue-rating">
+              <i className="fa fa-star fa-2x" aria-hidden="true"></i>{venue.rating}
+            </p>
+            <p className="venue-checked-in venue-ele">
+              <i className="fa fa-user-circle-o fa-2x" aria-hidden="true"></i>Checked In: {venue.stats.checkinsCount}
+            </p>
           </div>
+          
         </div>
 
       </li>

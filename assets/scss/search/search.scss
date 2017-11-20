@@ -96,14 +96,14 @@ background: linear-gradient(to right, #a5b1c2, #cfdef3, #a5b1c2); /* W3C, IE 10+
 
 @include maxMQ(1050px) {
     #search-title {
-        font-size: 2em;
-    }
-    #search-p {
-        font-size: 1em;
+        font-size: 1.5em;
     }
     .search-input {
         width: 120px;
     }
+#search-btn {
+        width: 100px;
+    font-size: 0.9em;}
 }
 
 @include maxMQ(650px) {
@@ -134,6 +134,7 @@ background: linear-gradient(to right, #a5b1c2, #cfdef3, #a5b1c2); /* W3C, IE 10+
         margin: 5px;
     }
     #search-btn {
+        font-size: 1.3em;
         padding: 2px 6px;
         margin-top: 5px;
         margin-left: 0;
