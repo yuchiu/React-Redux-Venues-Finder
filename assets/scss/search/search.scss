@@ -143,3 +143,16 @@ background: linear-gradient(to right, #889ab6, #cfdef3, #889ab6); /* W3C, IE 10+
         width: 312px;
     }
 }
+
+@include maxMQ(450px) {
+    #search-title {
+        font-size: 1.7em;
+    }
+    .search-input {
+        width: 250px;
+    }
+    #search-btn {
+        width: 262px;
+        margin-left:5px;
+    }
+}

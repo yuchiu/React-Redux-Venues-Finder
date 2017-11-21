@@ -15,7 +15,7 @@ body{
   margin-top:70px;
   position: fixed;
   width: 50vw;
-  height: 100vh;
+  height: 92vh;
 }
 
 //right section
@@ -50,6 +50,9 @@ body{
 }
 @include maxMQ(650px) {
   #left-section {
-    margin-top:240px;
+    margin-top:0px;
+  }
+  #search-container {
+      position: relative;
   }
 }
